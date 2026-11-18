@@ -118,7 +118,13 @@ function Atlas() {
         <div aria-live="polite">
           <h2>{component?.[0] || project?.[0] || domain?.name || "Pick a domain"}</h2>
           <p>{component?.[1] || project?.[1] || (domain ? "Pick a project to open its architecture." : "Drag to look around, use + or − to zoom, and follow a node to see what I built :)")}</p>
-          {project && <><p className="mono atlas-tech">{project[2]}</p>{project[3] && <a className="underlink" href={"https://github.com/esh22nika/"+project[3]}>{project[4] || "Source on GitHub ↗"}</a>}</>}
+          {project && <>
+            <p className="mono atlas-tech">{project[2]}</p>
+            <div className="project-links">
+              {project[5] && <a className="button" href={project[5]} target="_blank" rel="noopener noreferrer">Live demo</a>}
+              {project[3] && <a className="underlink" href={"https://github.com/esh22nika/"+project[3]}>{project[4] || "Source on GitHub ↗"}</a>}
+            </div>
+          </>}
         </div>
         <div className="atlas-options" role="group" aria-label={project?"Architecture components":domain?"Projects":"Domains"}>
           {(project ? architecture[project[0]] || [] : domain?.projects || topics).map(item=><button key={item.name||item[0]} aria-pressed={project?component===item:undefined} onClick={()=>project?setComponent(item):domain?openProject(item):openDomain(item)}>{item.name||item[0]}</button>)}

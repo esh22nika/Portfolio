@@ -1,8 +1,10 @@
+export const sarvboliDemoUrl = "https://sarvboli.13-236-190-161.sslip.io/";
+
 export const topics = [
   {
     name: "Language & AI", color: "#dcc2ef", x: 50, y: 17,
     projects: [
-      ["SarvBoli", "i wanted to make it easier to actually speak the language you’re learning :D I built a React Native app and FastAPI backend for practicing Hindi, Marathi, and Telugu. The voice flow goes from recording and transcription to playing back a reply.", "React Native · Expo · FastAPI"],
+      ["SarvBoli", "i wanted to make it easier to actually speak the language you’re learning :D I built a React Native app and FastAPI backend for practicing Hindi, Marathi, and Telugu. The voice flow goes from recording and transcription to playing back a reply.", "React Native · Expo · FastAPI", null, null, sarvboliDemoUrl],
       ["Local RAG agent", "a local RAG chatbot experiment. I wanted to see how much of a retrieval and chat workflow I could run on my own machine :)", "Retrieval-augmented generation", "local_rag_agent"],
       ["Local blog writing agent", "a blog writer that runs locally. LangGraph coordinates the writing workflow and Ollama runs the Qwen model, so the project can work without paid model API calls.", "LangGraph · Ollama · Qwen · Streamlit", "blog_writing_agent"]
     ]

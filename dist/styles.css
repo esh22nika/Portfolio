@@ -66,6 +66,7 @@ h2 { font:600 clamp(1.5rem,3vw,2.3rem)/1.15 var(--serif); letter-spacing:-.035em
 .preview-notes p { max-width:63ch; font-size:.94rem; color:#c6cfc2; }
 .preview-notes ul { display:flex; flex-wrap:wrap; gap:8px 16px; list-style:none; padding:0; margin:14px 0; font:.72rem var(--mono); color:var(--sage); }
 .preview-notes a { font:.8rem var(--mono); color:var(--lilac); }
+.project-links { display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px; }
 .tool-group { display:grid; grid-template-columns:170px 1fr; gap:15px; padding-block:20px; border-bottom:1px solid var(--line); }
 .tool-group h3 { font:500 .875rem/1.5 var(--mono); color:var(--sage); }
 .tool-group ul { list-style:none; display:flex; flex-wrap:wrap; gap:17px 16px; padding:0; margin:0; }
