@@ -31,6 +31,14 @@ img { display:block; max-width:100%; }
 .intro-greeting { color:#a0b09f; font:.875rem/1.5 var(--mono); margin-bottom:24px; }
 .intro h1 { position:relative; width:fit-content; font:600 clamp(3.6rem,7.4vw,8.2rem)/.93 var(--serif); letter-spacing:-.055em; }
 .intro h1 > span:not(.name-star) { color:var(--lilac); }
+.intro-top { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:36px; align-items:center; }
+#hero-art { min-width:0; }
+.alpine-scene { margin:0; }
+.alpine-scene canvas { display:block; background:#090c18; aspect-ratio:2; }
+.alpine-scene figcaption { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-top:9px; font:.7rem/1.5 var(--mono); color:var(--sage); }
+.alpine-scene figcaption a { text-decoration:none; }
+.alpine-scene figcaption a:hover { text-decoration:underline; }
+.alpine-scene button { padding:4px 0; border:0; border-bottom:1px solid var(--line); color:var(--lilac); background:none; font:inherit; cursor:pointer; }
 .name-star { position:absolute; right:-.85em; top:.55em; font-size:.38em; color:var(--sage); }
 .intro-bottom { display:flex; gap:28px; justify-content:space-between; align-items:end; margin-top:28px; }
 .intro-bottom > p { max-width:45ch; line-height:1.65; }
@@ -156,6 +164,7 @@ h2 { font:600 clamp(1.5rem,3vw,2.3rem)/1.15 var(--serif); letter-spacing:-.035em
   body { padding-left:190px; }
   .site-header { width:190px; padding:28px 20px; }
   .home { font-size:.875rem; }
+  .intro-top { grid-template-columns:1fr; gap:28px; }
   .rail-note a { font-size:.65rem; }
   .workbench { grid-template-columns:1fr; gap:15px; }
   .project-selector { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }

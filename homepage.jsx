@@ -1,8 +1,29 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {createRoot} from "react-dom/client";
 import {useReducedMotion} from "motion/react";
+import {mount} from "ascii.rest";
+import * as alpineDawn from "ascii.rest/pieces/alpine-dawn";
 import DecryptedText from "./components/reactbits/DecryptedText";
 import TiltedCard from "./components/reactbits/TiltedCard";
+
+function AlpineDawn() {
+  const canvas = useRef(null);
+  const [paused, setPaused] = useState(false);
+  const reduced = useReducedMotion();
+
+  useEffect(() => {
+    if (paused) return;
+    return mount(canvas.current, alpineDawn, {fps: reduced ? 0 : 15});
+  }, [paused, reduced]);
+
+  return <figure className="alpine-scene">
+    <canvas ref={canvas} role="img" aria-label="Animated ASCII landscape of snowy peaks at dawn above a still mountain lake" style={{width:"100%"}} />
+    <figcaption>
+      <a href="https://ascii.rest/alpine-dawn/">alpine dawn · ascii.rest</a>
+      {!reduced && <button type="button" onClick={() => setPaused(value => !value)} aria-pressed={paused}>{paused ? "Play animation" : "Pause animation"}</button>}
+    </figcaption>
+  </figure>;
+}
 
 const projects = [
   {name:"SarvBoli",tag:"AI / language learning",image:"media/sarvboli-logo.png",alt:"SarvBoli language learning app logo",description:"A place to actually practice speaking Hindi, Marathi, and Telugu :) I built the React Native app and FastAPI backend for multilingual chat, voice calls, and roleplays, including recording, transcription, reply playback, and persistent sign-in.",stack:["React Native","Expo","FastAPI","AWS EC2"]},
@@ -35,3 +56,5 @@ function Workbench() {
 }
 const host=document.querySelector("#workbench");
 if(host) createRoot(host).render(<Workbench />);
+const heroArt=document.querySelector("#hero-art");
+if(heroArt) createRoot(heroArt).render(<AlpineDawn />);
