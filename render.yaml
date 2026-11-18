@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: eshanika-portfolio
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    autoDeployTrigger: commit
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+
